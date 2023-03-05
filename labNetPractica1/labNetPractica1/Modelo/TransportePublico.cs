@@ -8,13 +8,12 @@ namespace labNetPractica1.Modelo
 {
     public abstract class TransportePublico
     {
-        private int Pasajeros { get; set; }
-        public TransportePublico( int _pasajeros )
+        public TransportePublico(int _numtransporte, int _pasajeros)
         {
+            this.NumTransporte = _numtransporte;
             this.Pasajeros = _pasajeros;
         }
-
-        public abstract string Avanzar();
-        public abstract string Detenerse();
+        public int Pasajeros { get; set; }
+        public int NumTransporte { get; set; }
     }
 }
