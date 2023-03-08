@@ -12,6 +12,7 @@ namespace LabNetPractica2
 {
     public partial class FormEjercicio01 : Form
     {
+        Ejercicio01 ctrl = new Ejercicio01();
         public FormEjercicio01()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace LabNetPractica2
 
         private void btn_RealizarOperacion_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(ctrl.Dividir(nupd_NumValor.Value));
         }
     }
 }

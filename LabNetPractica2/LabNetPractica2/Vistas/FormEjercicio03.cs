@@ -12,6 +12,7 @@ namespace LabNetPractica2
 {
     public partial class FormEjercicio03 : Form
     {
+        Logic logic = new Logic();
         public FormEjercicio03()
         {
             InitializeComponent();
@@ -19,7 +20,14 @@ namespace LabNetPractica2
 
         private void btn_InfExcepcion_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                throw logic.DispararException();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Mensaje de la excepción: {ex.Message} \n\n Tipo de la excepción: {ex}.");
+            }
         }
     }
 }

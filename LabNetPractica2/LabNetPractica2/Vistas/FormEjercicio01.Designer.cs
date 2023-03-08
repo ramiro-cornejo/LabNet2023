@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nupd_NumValor = new System.Windows.Forms.NumericUpDown();
             this.btn_RealizarOperacion = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupd_NumValor)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -45,12 +45,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Ingresar un valor para dividir";
             // 
-            // numericUpDown1
+            // nupd_NumValor
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(71, 53);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(203, 22);
-            this.numericUpDown1.TabIndex = 2;
+            this.nupd_NumValor.Location = new System.Drawing.Point(71, 53);
+            this.nupd_NumValor.Name = "nupd_NumValor";
+            this.nupd_NumValor.Size = new System.Drawing.Size(203, 22);
+            this.nupd_NumValor.TabIndex = 2;
             // 
             // btn_RealizarOperacion
             // 
@@ -69,11 +69,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 176);
             this.Controls.Add(this.btn_RealizarOperacion);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nupd_NumValor);
             this.Controls.Add(this.label2);
             this.Name = "FormEjercicio01";
             this.Text = "FormEjercicio01";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupd_NumValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,7 +81,7 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nupd_NumValor;
         private System.Windows.Forms.Button btn_RealizarOperacion;
     }
 }

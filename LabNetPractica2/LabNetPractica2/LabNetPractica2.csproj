@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ejercicio04Logic.cs" />
+    <Compile Include="Exceptions\DivisionCeroException.cs" />
+    <Compile Include="Ejercicio01.cs" />
+    <Compile Include="Ejercicio02.cs" />
+    <Compile Include="Exceptions\PersonalizadaException.cs" />
+    <Compile Include="ExtensionMethods\ExtensionMethods.cs" />
+    <Compile Include="Logic.cs" />
     <Compile Include="Vistas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

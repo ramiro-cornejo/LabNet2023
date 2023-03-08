@@ -36,7 +36,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 33);
+            this.label1.Location = new System.Drawing.Point(90, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 16);
             this.label1.TabIndex = 0;
@@ -44,9 +44,9 @@
             // 
             // btn_InfExcepcionPers
             // 
-            this.btn_InfExcepcionPers.Location = new System.Drawing.Point(71, 71);
+            this.btn_InfExcepcionPers.Location = new System.Drawing.Point(92, 77);
             this.btn_InfExcepcionPers.Name = "btn_InfExcepcionPers";
-            this.btn_InfExcepcionPers.Size = new System.Drawing.Size(205, 28);
+            this.btn_InfExcepcionPers.Size = new System.Drawing.Size(237, 28);
             this.btn_InfExcepcionPers.TabIndex = 1;
             this.btn_InfExcepcionPers.Text = "Ver información de excepción ";
             this.btn_InfExcepcionPers.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 128);
+            this.ClientSize = new System.Drawing.Size(433, 128);
             this.Controls.Add(this.btn_InfExcepcionPers);
             this.Controls.Add(this.label1);
             this.Name = "FormEjercicio04";
