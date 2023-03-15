@@ -16,5 +16,17 @@ namespace Lab.EF.UI
         {
             InitializeComponent();
         }
+
+        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormCategories();
+            formulario.ShowDialog();
+        }
+
+        private void shippersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormShippers();
+            formulario.ShowDialog();
+        }
     }
 }
