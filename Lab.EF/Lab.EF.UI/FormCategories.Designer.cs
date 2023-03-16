@@ -40,9 +40,9 @@
             this.btn_ActualizarCat = new System.Windows.Forms.Button();
             this.btn_EliminarCat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_Categories = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.nupd_CategoryID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Categories)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +117,7 @@
             this.btn_InsertarCat.TabIndex = 8;
             this.btn_InsertarCat.Text = "Insertar";
             this.btn_InsertarCat.UseVisualStyleBackColor = true;
+            this.btn_InsertarCat.Click += new System.EventHandler(this.btn_InsertarCat_Click);
             // 
             // btn_ActualizarCat
             // 
@@ -126,6 +127,7 @@
             this.btn_ActualizarCat.TabIndex = 9;
             this.btn_ActualizarCat.Text = "Actualizar";
             this.btn_ActualizarCat.UseVisualStyleBackColor = true;
+            this.btn_ActualizarCat.Click += new System.EventHandler(this.btn_ActualizarCat_Click);
             // 
             // btn_EliminarCat
             // 
@@ -135,6 +137,7 @@
             this.btn_EliminarCat.TabIndex = 10;
             this.btn_EliminarCat.Text = "Eliminar";
             this.btn_EliminarCat.UseVisualStyleBackColor = true;
+            this.btn_EliminarCat.Click += new System.EventHandler(this.btn_EliminarCat_Click);
             // 
             // label5
             // 
@@ -145,22 +148,23 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Datos de categorias";
             // 
-            // dataGridView1
+            // dgv_Categories
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 204);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 222);
-            this.dataGridView1.TabIndex = 12;
+            this.dgv_Categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Categories.Location = new System.Drawing.Point(32, 204);
+            this.dgv_Categories.Name = "dgv_Categories";
+            this.dgv_Categories.RowHeadersWidth = 51;
+            this.dgv_Categories.RowTemplate.Height = 24;
+            this.dgv_Categories.Size = new System.Drawing.Size(643, 222);
+            this.dgv_Categories.TabIndex = 12;
+            this.dgv_Categories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Categories_CellContentClick);
             // 
             // FormCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_Categories);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_EliminarCat);
             this.Controls.Add(this.btn_ActualizarCat);
@@ -176,7 +180,7 @@
             this.Name = "FormCategories";
             this.Text = "Categorias";
             ((System.ComponentModel.ISupportInitialize)(this.nupd_CategoryID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Categories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,6 +200,6 @@
         private System.Windows.Forms.Button btn_ActualizarCat;
         private System.Windows.Forms.Button btn_EliminarCat;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Categories;
     }
 }

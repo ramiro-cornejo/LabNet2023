@@ -16,5 +16,27 @@ namespace Lab.EF.UI
         {
             InitializeComponent();
         }
+
+        private void btn_InsertarShipper_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ActualizarShipper_Click(object sender, EventArgs e)
+        {
+            nupd_ShipperID.Text = "";
+            txt_CampanyName.Text = "";
+            txt_Phone.Text = "";
+        }
+
+        private void btn_EliminarShipper_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

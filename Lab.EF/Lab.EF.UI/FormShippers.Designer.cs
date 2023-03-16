@@ -108,6 +108,7 @@
             this.btn_InsertarShipper.TabIndex = 7;
             this.btn_InsertarShipper.Text = "Insertar";
             this.btn_InsertarShipper.UseVisualStyleBackColor = true;
+            this.btn_InsertarShipper.Click += new System.EventHandler(this.btn_InsertarShipper_Click);
             // 
             // btn_ActualizarShipper
             // 
@@ -117,6 +118,7 @@
             this.btn_ActualizarShipper.TabIndex = 8;
             this.btn_ActualizarShipper.Text = "Actualizar";
             this.btn_ActualizarShipper.UseVisualStyleBackColor = true;
+            this.btn_ActualizarShipper.Click += new System.EventHandler(this.btn_ActualizarShipper_Click);
             // 
             // btn_EliminarShipper
             // 
@@ -126,6 +128,7 @@
             this.btn_EliminarShipper.TabIndex = 9;
             this.btn_EliminarShipper.Text = "Eliminar";
             this.btn_EliminarShipper.UseVisualStyleBackColor = true;
+            this.btn_EliminarShipper.Click += new System.EventHandler(this.btn_EliminarShipper_Click);
             // 
             // dataGridView1
             // 
@@ -136,6 +139,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(613, 206);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FormShippers
             // 
