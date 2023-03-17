@@ -32,15 +32,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_CampanyName = new System.Windows.Forms.TextBox();
+            this.txt_CompanyName = new System.Windows.Forms.TextBox();
             this.txt_Phone = new System.Windows.Forms.TextBox();
             this.nupd_ShipperID = new System.Windows.Forms.NumericUpDown();
             this.btn_InsertarShipper = new System.Windows.Forms.Button();
             this.btn_ActualizarShipper = new System.Windows.Forms.Button();
             this.btn_EliminarShipper = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_Shippers = new System.Windows.Forms.DataGridView();
+            this.btn_Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupd_ShipperID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Shippers)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,12 +80,12 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Phone";
             // 
-            // txt_CampanyName
+            // txt_CompanyName
             // 
-            this.txt_CampanyName.Location = new System.Drawing.Point(163, 95);
-            this.txt_CampanyName.Name = "txt_CampanyName";
-            this.txt_CampanyName.Size = new System.Drawing.Size(220, 22);
-            this.txt_CampanyName.TabIndex = 4;
+            this.txt_CompanyName.Location = new System.Drawing.Point(163, 95);
+            this.txt_CompanyName.Name = "txt_CompanyName";
+            this.txt_CompanyName.Size = new System.Drawing.Size(220, 22);
+            this.txt_CompanyName.TabIndex = 4;
             // 
             // txt_Phone
             // 
@@ -130,37 +131,49 @@
             this.btn_EliminarShipper.UseVisualStyleBackColor = true;
             this.btn_EliminarShipper.Click += new System.EventHandler(this.btn_EliminarShipper_Click);
             // 
-            // dataGridView1
+            // dgv_Shippers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 220);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(613, 206);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv_Shippers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Shippers.Location = new System.Drawing.Point(46, 220);
+            this.dgv_Shippers.Name = "dgv_Shippers";
+            this.dgv_Shippers.RowHeadersWidth = 51;
+            this.dgv_Shippers.RowTemplate.Height = 24;
+            this.dgv_Shippers.Size = new System.Drawing.Size(613, 206);
+            this.dgv_Shippers.TabIndex = 10;
+        
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Location = new System.Drawing.Point(584, 439);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.btn_Refresh.TabIndex = 12;
+            this.btn_Refresh.Text = "Refrescar";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // FormShippers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(705, 474);
+            this.Controls.Add(this.btn_Refresh);
+            this.Controls.Add(this.dgv_Shippers);
             this.Controls.Add(this.btn_EliminarShipper);
             this.Controls.Add(this.btn_ActualizarShipper);
             this.Controls.Add(this.btn_InsertarShipper);
             this.Controls.Add(this.nupd_ShipperID);
             this.Controls.Add(this.txt_Phone);
-            this.Controls.Add(this.txt_CampanyName);
+            this.Controls.Add(this.txt_CompanyName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormShippers";
             this.Text = "Shippers";
+            
             ((System.ComponentModel.ISupportInitialize)(this.nupd_ShipperID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Shippers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,12 +185,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_CampanyName;
+        private System.Windows.Forms.TextBox txt_CompanyName;
         private System.Windows.Forms.TextBox txt_Phone;
         private System.Windows.Forms.NumericUpDown nupd_ShipperID;
         private System.Windows.Forms.Button btn_InsertarShipper;
         private System.Windows.Forms.Button btn_ActualizarShipper;
         private System.Windows.Forms.Button btn_EliminarShipper;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Shippers;
+        private System.Windows.Forms.Button btn_Refresh;
     }
 }

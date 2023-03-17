@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lab.EF.Logic
 {
-    interface IABMLogic<T, TId>
+    internal interface IABMLogic<T, TT>
     {
         List<T> GetAll();
-        void Add(T item);
-        void Update(T item);
-        void Delete(TId item);
+        void Add(T x);
+        void Update(T x);
+        void Delete(T x);
+        bool Exist(TT x);
     }
 }

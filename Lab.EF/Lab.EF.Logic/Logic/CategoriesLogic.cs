@@ -8,32 +8,29 @@ using System.Threading.Tasks;
 
 namespace Lab.EF.Logic
 {
-    public class CategoriesLogic : BaseLogic, IABMLogic<Categories, int>
+    public class CategoriesLogic : BaseLogic, IABMLogic<Categories, string>
     {
         public List<Categories> GetAll()
         {
             return context.Categories.ToList();
         }
-        public void Add(Categories item)
+        public void Add(Categories x)
         {
-            context.Categories.Add(item);
-            context.SaveChanges();
+            throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(Categories x)
         {
-            var categorieDelete = context.Categories.FirstOrDefault(r => r.CategoryID == id);
-            context.Categories.Remove(categorieDelete);
-            context.SaveChanges();
+            throw new NotImplementedException();
         }
-        public void Update(Categories item)
-        {
-            var categoriesUpdate = context.Categories.Find(item.CategoryID);
 
-            categoriesUpdate.CategoryName = item.CategoryName;
-            categoriesUpdate.Description = item.Description;
-            categoriesUpdate.Picture = item.Picture;
-            context.SaveChanges();
+        public bool Exist(string x)
+        {
+            throw new NotImplementedException();
+        }
+        public void Update(Categories x)
+        {
+            throw new NotImplementedException();
         }
     }
 }
