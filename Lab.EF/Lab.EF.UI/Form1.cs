@@ -28,5 +28,11 @@ namespace Lab.EF.UI
             Form formulario = new FormShippers();
             formulario.ShowDialog();
         }
+
+        private void ejerciciosLinqToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormLinq();
+            formulario.ShowDialog();
+        }
     }
 }

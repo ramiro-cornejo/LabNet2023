@@ -33,6 +33,8 @@
             this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.ejerciciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ejerciciosLinqToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verDatosToolStripMenuItem});
+            this.verDatosToolStripMenuItem,
+            this.ejerciciosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -81,6 +84,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = ".NET LAB";
             // 
+            // ejerciciosToolStripMenuItem
+            // 
+            this.ejerciciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ejerciciosLinqToolStripMenuItem});
+            this.ejerciciosToolStripMenuItem.Name = "ejerciciosToolStripMenuItem";
+            this.ejerciciosToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.ejerciciosToolStripMenuItem.Text = "Ejercicios";
+            // 
+            // ejerciciosLinqToolStripMenuItem
+            // 
+            this.ejerciciosLinqToolStripMenuItem.Name = "ejerciciosLinqToolStripMenuItem";
+            this.ejerciciosLinqToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ejerciciosLinqToolStripMenuItem.Text = "Ejercicios Linq";
+            this.ejerciciosLinqToolStripMenuItem.Click += new System.EventHandler(this.ejerciciosLinqToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -105,6 +123,8 @@
         private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shippersToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem ejerciciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ejerciciosLinqToolStripMenuItem;
     }
 }
 
