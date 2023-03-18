@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_ListLinq = new System.Windows.Forms.DataGridView();
+            this.dgv_ListEjercicios = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_numEjercicio = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListLinq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListEjercicios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv_ListLinq
+            // dgv_ListEjercicios
             // 
-            this.dgv_ListLinq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ListLinq.Location = new System.Drawing.Point(27, 125);
-            this.dgv_ListLinq.Name = "dgv_ListLinq";
-            this.dgv_ListLinq.RowHeadersWidth = 51;
-            this.dgv_ListLinq.RowTemplate.Height = 24;
-            this.dgv_ListLinq.Size = new System.Drawing.Size(725, 313);
-            this.dgv_ListLinq.TabIndex = 0;
+            this.dgv_ListEjercicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListEjercicios.Location = new System.Drawing.Point(27, 125);
+            this.dgv_ListEjercicios.Name = "dgv_ListEjercicios";
+            this.dgv_ListEjercicios.RowHeadersWidth = 51;
+            this.dgv_ListEjercicios.RowTemplate.Height = 24;
+            this.dgv_ListEjercicios.Size = new System.Drawing.Size(725, 313);
+            this.dgv_ListEjercicios.TabIndex = 0;
             // 
             // label1
             // 
@@ -54,16 +54,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ejercicios Linq";
             // 
-            // comboBox1
+            // cbo_numEjercicio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbo_numEjercicio.FormattingEnabled = true;
+            this.cbo_numEjercicio.Items.AddRange(new object[] {
             "Ejercicio 1",
             "Ejercicio 2",
             "Ejercicio 3",
             "Ejercicio 4",
             "Ejercicio 5",
-            "Ejercicio 6",
+            "Ejercicio 6 (Mayuscula)",
+            "Ejercicio 6 (Minuscula)",
             "Ejercicio 7",
             "Ejercicio 8 ",
             "Ejercicio 9 ",
@@ -71,10 +72,11 @@
             "Ejercicio 11 ",
             "Ejercicio 12 ",
             "Ejercicio 13"});
-            this.comboBox1.Location = new System.Drawing.Point(27, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 2;
+            this.cbo_numEjercicio.Location = new System.Drawing.Point(27, 63);
+            this.cbo_numEjercicio.Name = "cbo_numEjercicio";
+            this.cbo_numEjercicio.Size = new System.Drawing.Size(197, 24);
+            this.cbo_numEjercicio.TabIndex = 2;
+            this.cbo_numEjercicio.SelectedIndexChanged += new System.EventHandler(this.cbo_numEjercicio_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -91,13 +93,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbo_numEjercicio);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgv_ListLinq);
+            this.Controls.Add(this.dgv_ListEjercicios);
             this.Name = "FormLinq";
             this.Text = "FormLinq";
             this.Load += new System.EventHandler(this.FormLinq_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListLinq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListEjercicios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,9 +107,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv_ListLinq;
+        private System.Windows.Forms.DataGridView dgv_ListEjercicios;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_numEjercicio;
         private System.Windows.Forms.Label label2;
     }
 }
