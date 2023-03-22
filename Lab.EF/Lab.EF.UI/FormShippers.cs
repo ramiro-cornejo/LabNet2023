@@ -1,5 +1,5 @@
 ﻿using Lab.EF.Entities;
-using Lab.EF.Logic.Control;
+using Lab.EF.Logic.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +14,16 @@ namespace Lab.EF.UI
 {
     public partial class FormShippers : Form
     {
-        private ShippersControl _shippersControl;
+        private ShippersLogic _shLogic;
         public FormShippers()
         {
             InitializeComponent();
             ConfigDataGrid();
-            _shippersControl = new ShippersControl();
+            _shLogic = new ShippersLogic();
             btn_Refresh_Click(null, new EventArgs());
 
         }
-        private void RefreshTextboxs()
+        private void LimpiarTextboxs()
         {
             this.txt_CompanyName.Text = "";
             this.txt_Phone.Text = "";
@@ -43,7 +43,7 @@ namespace Lab.EF.UI
             bool existente = false;
             try
             {
-                existente = _shippersControl.Exist(txt_CompanyName.Text.Trim());
+                existente = _shLogic.Exist(txt_CompanyName.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -72,11 +72,11 @@ namespace Lab.EF.UI
                 {
                     if (!Exist())
                     {
-                        Shippers shippers = new Shippers();
-                        shippers.CompanyName = txt_CompanyName.Text;
-                        shippers.Phone = txt_Phone.Text;
+                        Shippers SH = new Shippers();
+                        SH.CompanyName = txt_CompanyName.Text;
+                        SH.Phone = txt_Phone.Text;
 
-                        _shippersControl.Add(shippers);
+                        _shLogic.Add(SH);
                         MessageBox.Show("Insert.");
                         btn_Refresh_Click(null, new EventArgs());
                     }
@@ -96,7 +96,7 @@ namespace Lab.EF.UI
             }
             finally
             {
-                RefreshTextboxs();
+                LimpiarTextboxs();
             }
         }
 
@@ -106,14 +106,14 @@ namespace Lab.EF.UI
             {
                 if (dgv_Shippers.RowCount > 0)
                 {
-                    Shippers shippers = null;
-                    shippers = dgv_Shippers.SelectedRows[0].DataBoundItem as Shippers;
-                    if (shippers != null)
+                    Shippers SHP = null;
+                    SHP = dgv_Shippers.SelectedRows[0].DataBoundItem as Shippers;
+                    if (SHP != null)
                     {
                         if (!string.IsNullOrEmpty(txt_CompanyName.Text.Trim()))
                         {
-                            shippers.CompanyName = txt_CompanyName.Text;
-                            _shippersControl.Update(shippers);
+                            SHP.CompanyName = txt_CompanyName.Text;
+                            _shLogic.Update(SHP);
                             MessageBox.Show("Modificado.");
                             btn_Refresh_Click(null, new EventArgs());
                         }
@@ -130,7 +130,7 @@ namespace Lab.EF.UI
             }
             finally
             {
-                RefreshTextboxs();
+                LimpiarTextboxs();
             }
         }
 
@@ -140,9 +140,9 @@ namespace Lab.EF.UI
             {
                 if (dgv_Shippers.RowCount > 0)
                 {
-                    Shippers shipperss = null;
-                    shipperss = dgv_Shippers.SelectedRows[0].DataBoundItem as Shippers;
-                    _shippersControl.Delete(shipperss);
+                    Shippers SHP = null;
+                    SHP = dgv_Shippers.SelectedRows[0].DataBoundItem as Shippers;
+                    _shLogic.Delete(SHP);
                     MessageBox.Show("Delete.");
                     btn_Refresh_Click(null, new EventArgs());
                 }
@@ -153,7 +153,7 @@ namespace Lab.EF.UI
             }
             finally
             {
-                RefreshTextboxs();
+                LimpiarTextboxs();
             }
         }
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -163,14 +163,14 @@ namespace Lab.EF.UI
         private void dgv_Shippers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            Shippers shippers = null;
+            Shippers SH = null;
             if (dgv_Shippers.RowCount > 0)
             {
 
-                shippers = dgv_Shippers.SelectedRows[0].DataBoundItem as Shippers;
-                if (shippers != null)
+                SH = dgv_Shippers.SelectedRows[0].DataBoundItem as Shippers;
+                if (SH != null)
                 {
-                    txt_CompanyName.Text = shippers.CompanyName ?? "";
+                    txt_CompanyName.Text = SH.CompanyName ?? "";
                 }
             }
         }
@@ -179,12 +179,17 @@ namespace Lab.EF.UI
         {
             try
             {
-                MostrarDataGrid(_shippersControl.GetAll());
+                MostrarDataGrid(_shLogic.GetAll());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

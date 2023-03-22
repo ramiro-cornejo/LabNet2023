@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,22 +16,16 @@ namespace Lab.EF.UI
             InitializeComponent();
         }
 
-        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new FormCategories();
-            formulario.ShowDialog();
+            Form form = new FormSuppliers();
+            form.ShowDialog();
         }
 
         private void shippersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new FormShippers();
-            formulario.ShowDialog();
-        }
-
-        private void ejerciciosLinqToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form formulario = new FormLinq();
-            formulario.ShowDialog();
+            Form form = new FormShippers();
+            form.ShowDialog();
         }
     }
 }

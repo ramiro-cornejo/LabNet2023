@@ -59,37 +59,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCategories.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCategories.Designer.cs">
-      <DependentUpon>FormCategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLinq.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLinq.Designer.cs">
-      <DependentUpon>FormLinq.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormShippers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormShippers.Designer.cs">
       <DependentUpon>FormShippers.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppliers.Designer.cs">
+      <DependentUpon>FormSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCategories.resx">
-      <DependentUpon>FormCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLinq.resx">
-      <DependentUpon>FormLinq.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormShippers.resx">
       <DependentUpon>FormShippers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppliers.resx">
+      <DependentUpon>FormSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -48,16 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\LinqControl.cs" />
     <Compile Include="Control\ShippersControl.cs" />
+    <Compile Include="Control\SuppliersControl.cs" />
     <Compile Include="Logic\BaseLogic.cs" />
-    <Compile Include="Logic\CategoriesLogic.cs" />
     <Compile Include="Interface\IABMLogic.cs" />
-    <Compile Include="Logic\CustomersLogic.cs" />
-    <Compile Include="Logic\OrdersLogic.cs" />
-    <Compile Include="Logic\ProductsLogic.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logic\ShippersLogic.cs" />
+    <Compile Include="Logic\SuppliersLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

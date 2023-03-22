@@ -30,11 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.verDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.ejerciciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ejerciciosLinqToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,29 +40,28 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verDatosToolStripMenuItem,
-            this.ejerciciosToolStripMenuItem});
+            this.verDatosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1047, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // verDatosToolStripMenuItem
             // 
             this.verDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.categoriesToolStripMenuItem,
+            this.suppliersToolStripMenuItem,
             this.shippersToolStripMenuItem});
             this.verDatosToolStripMenuItem.Name = "verDatosToolStripMenuItem";
             this.verDatosToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.verDatosToolStripMenuItem.Text = "Ver Datos";
             // 
-            // categoriesToolStripMenuItem
+            // suppliersToolStripMenuItem
             // 
-            this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
-            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.categoriesToolStripMenuItem.Text = "Categories";
-            this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.categoriesToolStripMenuItem_Click);
+            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            this.suppliersToolStripMenuItem.Click += new System.EventHandler(this.suppliersToolStripMenuItem_Click);
             // 
             // shippersToolStripMenuItem
             // 
@@ -78,32 +75,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(88, 175);
+            this.label1.Location = new System.Drawing.Point(187, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(597, 135);
             this.label1.TabIndex = 1;
             this.label1.Text = ".NET LAB";
             // 
-            // ejerciciosToolStripMenuItem
-            // 
-            this.ejerciciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ejerciciosLinqToolStripMenuItem});
-            this.ejerciciosToolStripMenuItem.Name = "ejerciciosToolStripMenuItem";
-            this.ejerciciosToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.ejerciciosToolStripMenuItem.Text = "Ejercicios";
-            // 
-            // ejerciciosLinqToolStripMenuItem
-            // 
-            this.ejerciciosLinqToolStripMenuItem.Name = "ejerciciosLinqToolStripMenuItem";
-            this.ejerciciosLinqToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ejerciciosLinqToolStripMenuItem.Text = "Ejercicios Linq";
-            this.ejerciciosLinqToolStripMenuItem.Click += new System.EventHandler(this.ejerciciosLinqToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1047, 571);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -120,11 +102,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem verDatosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shippersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem ejerciciosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ejerciciosLinqToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shippersToolStripMenuItem;
     }
 }
 

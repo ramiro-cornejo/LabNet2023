@@ -8,14 +8,18 @@ using System.Threading.Tasks;
 
 namespace Lab.EF.Logic.Control
 {
-    public class ShippersControl : IABMLogic<Shippers, string>
+    public class SuppliersControl : BaseLogic, IABMLogic<Suppliers, string>
     {
-        private ShippersLogic _spLogic;
-        public ShippersControl()
+        private SuppliersLogic _spLogic;
+
+        public SuppliersControl()
         {
-            _spLogic = new ShippersLogic();
+            _spLogic = new SuppliersLogic();
         }
-        public List<Shippers> GetAll()
+
+
+
+        public List<Suppliers> GetAll()
         {
             try
             {
@@ -26,7 +30,8 @@ namespace Lab.EF.Logic.Control
                 throw ex;
             }
         }
-        public void Add(Shippers x)
+
+        public void Add(Suppliers x)
         {
             try
             {
@@ -36,18 +41,7 @@ namespace Lab.EF.Logic.Control
             {
                 throw ex;
             }
-        }
 
-        public void Delete(Shippers x)
-        {
-            try
-            {
-                _spLogic.Delete(x);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
         public bool Exist(string x)
@@ -60,9 +54,22 @@ namespace Lab.EF.Logic.Control
             {
                 throw ex;
             }
+
         }
 
-        public void Update(Shippers x)
+        public void Delete(Suppliers x)
+        {
+            try
+            {
+                _spLogic.Delete(x);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Update(Suppliers x)
         {
             try
             {

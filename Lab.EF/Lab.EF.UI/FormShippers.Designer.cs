@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_CompanyName = new System.Windows.Forms.TextBox();
             this.txt_Phone = new System.Windows.Forms.TextBox();
-            this.nupd_ShipperID = new System.Windows.Forms.NumericUpDown();
             this.btn_InsertarShipper = new System.Windows.Forms.Button();
             this.btn_ActualizarShipper = new System.Windows.Forms.Button();
             this.btn_EliminarShipper = new System.Windows.Forms.Button();
             this.dgv_Shippers = new System.Windows.Forms.DataGridView();
             this.btn_Refresh = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nupd_ShipperID)).BeginInit();
+            this.btn_Salir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Shippers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,19 +51,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos de Shippers";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Shipper ID";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 76);
+            this.label3.Location = new System.Drawing.Point(43, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 16);
             this.label3.TabIndex = 2;
@@ -74,7 +63,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(436, 76);
+            this.label4.Location = new System.Drawing.Point(452, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 3;
@@ -82,28 +71,21 @@
             // 
             // txt_CompanyName
             // 
-            this.txt_CompanyName.Location = new System.Drawing.Point(163, 95);
+            this.txt_CompanyName.Location = new System.Drawing.Point(46, 95);
             this.txt_CompanyName.Name = "txt_CompanyName";
             this.txt_CompanyName.Size = new System.Drawing.Size(220, 22);
             this.txt_CompanyName.TabIndex = 4;
             // 
             // txt_Phone
             // 
-            this.txt_Phone.Location = new System.Drawing.Point(439, 95);
+            this.txt_Phone.Location = new System.Drawing.Point(455, 95);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(220, 22);
             this.txt_Phone.TabIndex = 5;
             // 
-            // nupd_ShipperID
-            // 
-            this.nupd_ShipperID.Location = new System.Drawing.Point(46, 96);
-            this.nupd_ShipperID.Name = "nupd_ShipperID";
-            this.nupd_ShipperID.Size = new System.Drawing.Size(67, 22);
-            this.nupd_ShipperID.TabIndex = 6;
-            // 
             // btn_InsertarShipper
             // 
-            this.btn_InsertarShipper.Location = new System.Drawing.Point(344, 154);
+            this.btn_InsertarShipper.Location = new System.Drawing.Point(600, 154);
             this.btn_InsertarShipper.Name = "btn_InsertarShipper";
             this.btn_InsertarShipper.Size = new System.Drawing.Size(75, 23);
             this.btn_InsertarShipper.TabIndex = 7;
@@ -113,7 +95,7 @@
             // 
             // btn_ActualizarShipper
             // 
-            this.btn_ActualizarShipper.Location = new System.Drawing.Point(452, 154);
+            this.btn_ActualizarShipper.Location = new System.Drawing.Point(725, 154);
             this.btn_ActualizarShipper.Name = "btn_ActualizarShipper";
             this.btn_ActualizarShipper.Size = new System.Drawing.Size(100, 23);
             this.btn_ActualizarShipper.TabIndex = 8;
@@ -123,7 +105,7 @@
             // 
             // btn_EliminarShipper
             // 
-            this.btn_EliminarShipper.Location = new System.Drawing.Point(584, 154);
+            this.btn_EliminarShipper.Location = new System.Drawing.Point(874, 154);
             this.btn_EliminarShipper.Name = "btn_EliminarShipper";
             this.btn_EliminarShipper.Size = new System.Drawing.Size(75, 23);
             this.btn_EliminarShipper.TabIndex = 9;
@@ -138,13 +120,12 @@
             this.dgv_Shippers.Name = "dgv_Shippers";
             this.dgv_Shippers.RowHeadersWidth = 51;
             this.dgv_Shippers.RowTemplate.Height = 24;
-            this.dgv_Shippers.Size = new System.Drawing.Size(613, 206);
+            this.dgv_Shippers.Size = new System.Drawing.Size(903, 368);
             this.dgv_Shippers.TabIndex = 10;
-        
             // 
             // btn_Refresh
             // 
-            this.btn_Refresh.Location = new System.Drawing.Point(584, 439);
+            this.btn_Refresh.Location = new System.Drawing.Point(750, 594);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(75, 23);
             this.btn_Refresh.TabIndex = 12;
@@ -152,27 +133,34 @@
             this.btn_Refresh.UseVisualStyleBackColor = true;
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // btn_Salir
+            // 
+            this.btn_Salir.Location = new System.Drawing.Point(874, 594);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salir.TabIndex = 13;
+            this.btn_Salir.Text = "Salir";
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // FormShippers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 474);
+            this.ClientSize = new System.Drawing.Size(1018, 652);
+            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.dgv_Shippers);
             this.Controls.Add(this.btn_EliminarShipper);
             this.Controls.Add(this.btn_ActualizarShipper);
             this.Controls.Add(this.btn_InsertarShipper);
-            this.Controls.Add(this.nupd_ShipperID);
             this.Controls.Add(this.txt_Phone);
             this.Controls.Add(this.txt_CompanyName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormShippers";
             this.Text = "Shippers";
-            
-            ((System.ComponentModel.ISupportInitialize)(this.nupd_ShipperID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Shippers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,16 +170,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_CompanyName;
         private System.Windows.Forms.TextBox txt_Phone;
-        private System.Windows.Forms.NumericUpDown nupd_ShipperID;
         private System.Windows.Forms.Button btn_InsertarShipper;
         private System.Windows.Forms.Button btn_ActualizarShipper;
         private System.Windows.Forms.Button btn_EliminarShipper;
         private System.Windows.Forms.DataGridView dgv_Shippers;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.Button btn_Salir;
     }
 }
