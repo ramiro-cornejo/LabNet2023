@@ -1,7 +1,41 @@
-﻿
+﻿@model List<Lab.EF.MVC.Models.SuppliersViewModel>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Suppliers";
 }
 
-<h2>Index</h2>
+<h2>Datos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">SupplierID</th>
+            <th scope="col">CompanyName</th>
+            <th scope="col">ContactName</th>
+            <th scope="col">Configuración</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var suppliers in Model)
+            {
+                <tr>
+                    <td>
+                        @suppliers.SupplierID
+                    </td>
+                    <td>
+                        @suppliers.CompanyName
+                    </td>
+                    <td>
+                        @suppliers.ContactName
+                    </td>
+                    <td>
+                        <br/>
+                        @Html.ActionLink("Modificar", "Insert", "Suppliers")
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Insertar nuevo Supplier", "Insert")
+</div>
 
