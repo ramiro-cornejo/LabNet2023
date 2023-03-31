@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#appContainer {
+    height: 90vh; 
+    width: 100vW;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #0F6489, #1395B8);
+}
+
+.button-color  {
+    background-color: #FF7411;
+    color: #fff;
+}
