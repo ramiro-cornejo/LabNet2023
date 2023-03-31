@@ -1,14 +1,13 @@
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, sans-serif; background: linear-gradient(to right, #0F6489, #1395B8);}
 
-#appContainer {
+.container-style {
     height: 90vh; 
     width: 100vW;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #0F6489, #1395B8);
 }
 
 .button-color  {

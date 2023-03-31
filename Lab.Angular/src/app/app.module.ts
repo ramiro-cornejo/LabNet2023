@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
     FooterComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    InicioComponent
+    InicioComponent,
+    NosotrosComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
