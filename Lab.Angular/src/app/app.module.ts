@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Angular Material
 import {MatTableModule} from '@angular/material/table';
@@ -27,6 +28,7 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ListSuppliersComponent } from './components/list-suppliers/list-suppliers.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { AddEditSupplierComponent } from './components/add-edit-supplier/add-edit-supplier.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     NosotrosComponent,
     ContactoComponent,
     ListSuppliersComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AddEditSupplierComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MatCardModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatGridListModule
+    MatGridListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
