@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'list-suppliers', component: ListSuppliersComponent},
   { path: 'addSupplier', component: AddEditSupplierComponent},
+  { path: 'editSupplier/:id', component: AddEditSupplierComponent},
   { path: 'contacto', component: ContactoComponent},
   { path: '**', component: PageNotFoundComponent}
 ];

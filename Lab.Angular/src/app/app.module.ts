@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Angular Material
 import {MatTableModule} from '@angular/material/table';
@@ -29,6 +30,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { ListSuppliersComponent } from './components/list-suppliers/list-suppliers.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AddEditSupplierComponent } from './components/add-edit-supplier/add-edit-supplier.component';
+import { SuppliersService } from './services/suppliers.service';
+
 
 @NgModule({
   declarations: [
@@ -60,9 +63,10 @@ import { AddEditSupplierComponent } from './components/add-edit-supplier/add-edi
     MatSnackBarModule,
     MatProgressBarModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SuppliersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

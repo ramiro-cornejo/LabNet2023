@@ -1,5 +1,5 @@
 export interface Supplier {
-    supplierId: number,
+    supplierId?: number,
     companyName: string,
     contactName: string
 }
