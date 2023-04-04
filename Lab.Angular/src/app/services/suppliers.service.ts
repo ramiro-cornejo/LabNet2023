@@ -9,7 +9,7 @@ import { Supplier } from '../interfaces/supplier';
 })
 export class SuppliersService {
   private myAppUrl: string = environment.endpoint;
-  private myApiUrl: string = 'api/Suppliers/';
+  private myApiUrl: string = 'api/Suppliers';
 
   constructor(private http: HttpClient) { }
 

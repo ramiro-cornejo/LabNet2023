@@ -28,11 +28,11 @@ operacion: string = 'Agregar';
   ngOnInit(): void {
     if(this.id != 0){
       this.operacion = 'Editar';
-      this.traeSupplier(this.id)
+      this.traerSupplier(this.id)
     }
   }
 
-  traeSupplier(id: number){
+  traerSupplier(id: number){
     this.loading = true;
     this._supplierService.getSupplier(id).subscribe(data =>{
       this.form.patchValue({

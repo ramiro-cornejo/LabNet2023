@@ -21,12 +21,16 @@ export class ListSuppliersComponent implements OnInit,AfterViewInit {
 
   constructor(private _snackBar: MatSnackBar, private _supplierService : SuppliersService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.traerSuppliers();
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.paginator._intl.itemsPerPageLabel = 'Items por pág'
+    if(this.dataSource.data.length > 0){
+      this.paginator._intl.itemsPerPageLabel = 'Items por pág'
+    }
   }
   
   applyFilter(event: Event) {
@@ -55,6 +59,8 @@ export class ListSuppliersComponent implements OnInit,AfterViewInit {
         duration: 4000,
         horizontalPosition: 'right',
       });
+      this.loading = false;
+      this.traerSuppliers();
     })
   }
 }

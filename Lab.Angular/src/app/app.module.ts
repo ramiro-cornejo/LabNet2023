@@ -30,7 +30,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { ListSuppliersComponent } from './components/list-suppliers/list-suppliers.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AddEditSupplierComponent } from './components/add-edit-supplier/add-edit-supplier.component';
-import { SuppliersService } from './services/suppliers.service';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -64,9 +64,10 @@ import { SuppliersService } from './services/suppliers.service';
     MatProgressBarModule,
     MatGridListModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
-  providers: [SuppliersService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
