@@ -82,5 +82,10 @@ namespace Lab.EF.Logic.Logic
                 throw new Exception($"Error de actualización Shippers {ex.Message} , {ex.StackTrace}");
             }
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

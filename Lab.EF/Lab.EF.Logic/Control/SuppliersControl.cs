@@ -10,7 +10,7 @@ namespace Lab.EF.Logic.Control
 {
     public class SuppliersControl : BaseLogic, IABMLogic<Suppliers, string>
     {
-        private SuppliersLogic _spLogic;
+        private readonly SuppliersLogic _spLogic;
 
         public SuppliersControl()
         {
@@ -57,11 +57,11 @@ namespace Lab.EF.Logic.Control
 
         }
 
-        public void Delete(Suppliers x)
+        public void Update(Suppliers x)
         {
             try
             {
-                _spLogic.Delete(x);
+                _spLogic.Update(x);
             }
             catch (Exception ex)
             {
@@ -69,11 +69,11 @@ namespace Lab.EF.Logic.Control
             }
         }
 
-        public void Update(Suppliers x)
+        public void Delete(int id)
         {
             try
             {
-                _spLogic.Update(x);
+                _spLogic.Delete(id);
             }
             catch (Exception ex)
             {

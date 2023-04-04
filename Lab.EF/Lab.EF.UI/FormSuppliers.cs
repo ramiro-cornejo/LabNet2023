@@ -166,7 +166,7 @@ namespace Lab.EF.UI
                 {
                     Suppliers SPP = null;
                     SPP = dgv_Suppliers.SelectedRows[0].DataBoundItem as Suppliers;
-                    _spLogic.Delete(SPP);
+                    _spLogic.Delete();
                     MessageBox.Show("eliminado");
                     btn_Refresh_Click(null, new EventArgs());
                 }

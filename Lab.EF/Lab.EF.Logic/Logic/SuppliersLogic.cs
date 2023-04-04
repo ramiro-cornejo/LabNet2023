@@ -8,72 +8,46 @@ using System.Threading.Tasks;
 
 namespace Lab.EF.Logic.Logic
 {
-    public class SuppliersLogic : BaseLogic, IABMLogic<Suppliers, string>
+    public class SuppliersLogic : BaseLogic, IABMLogic<Suppliers,string>
     {
+        public void Add(Suppliers x)
+        {
+            context.Suppliers.Add(x);
+            context.SaveChanges();
+        }
 
+        public void Delete(int id)
+        {
+            var supplierToDelete = context.Suppliers.Find(id);
+            if(supplierToDelete == null)
+            {
+                throw new ArgumentException($"Supplier con ID {id} no existente. ");
+            }
+            context.Suppliers.Remove(supplierToDelete);
+            context.SaveChanges();
+        }
 
         public List<Suppliers> GetAll()
         {
-            try
-            {
-                return context.Suppliers.AsNoTracking().ToList();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error de incoporación {ex.Message} -- {ex.StackTrace}");
-            }
-        }
-
-        public void Add(Suppliers x)
-        {
-            try
-            {
-                context.Suppliers.Add(x);
-                context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error Add Suppliers {ex.Message} -- {ex.StackTrace}");
-            }
+            return context.Suppliers.ToList();
         }
 
         public void Update(Suppliers x)
         {
-            try
+            var supplierUpdate = context.Suppliers.Find(x.SupplierID);
+            if(supplierUpdate == null)
             {
-                Suppliers SP = context.Suppliers.FirstOrDefault(s => s.SupplierID == x.SupplierID);
-                SP.CompanyName = x.CompanyName;
-                SP.ContactName = x.ContactName;
-                SP.ContactTitle = x.ContactTitle;
-                SP.City = x.City;
-                context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error de actualización Suppliers {ex.Message} -- {ex.StackTrace}");
+                throw new ArgumentException($"Supplier con ID {x.SupplierID} no existente.");
             }
 
+            supplierUpdate.CompanyName = x.CompanyName;
+            supplierUpdate.ContactName = x.ContactName;
+            context.SaveChanges();
         }
-        public void Delete(Suppliers x)
+
+        public Suppliers GetById(int id)
         {
-            try
-            {
-
-                Suppliers SP = context.Suppliers.FirstOrDefault<Suppliers>(s => s.SupplierID == x.SupplierID);
-                if (SP != null)
-                {
-                    List<Products> PR = SP.Products.ToList();
-                    PR.ForEach(pr => pr.SupplierID = null);
-                    context.Suppliers.Remove(SP);
-                    context.SaveChanges();
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception($"Error Delete Suppliers {ex.Message} -- {ex.StackTrace}");
-            }
+            return context.Suppliers.FirstOrDefault(s => s.SupplierID == id);
         }
 
         public bool Exist(string x)
@@ -88,6 +62,11 @@ namespace Lab.EF.Logic.Logic
                 throw new Exception($"Error de existencia Suppliers {ex.Message} -- {ex.StackTrace}");
             }
 
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
         }
     }
 }

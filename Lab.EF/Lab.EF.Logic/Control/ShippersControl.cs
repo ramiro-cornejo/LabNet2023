@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lab.EF.Logic.Control
 {
-    public class ShippersControl : IABMLogic<Shippers, string>
+    public class ShippersControl : IABMLogic<Shippers,string>
     {
         private ShippersLogic _spLogic;
         public ShippersControl()
@@ -72,6 +72,11 @@ namespace Lab.EF.Logic.Control
             {
                 throw ex;
             }
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

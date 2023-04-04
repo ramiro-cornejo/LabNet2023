@@ -8,71 +8,81 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Web.Mvc;
-using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
-using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
 
 namespace Lab.EF.WebApi.Controllers
 {
-    [EnableCors("*","*","*")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*" , methods: "*")]
     public class SuppliersController : ApiController
     {
-        readonly SuppliersLogic suppliersLogic = new SuppliersLogic();
-
-        public SuppliersController()
+        private readonly SuppliersLogic _supplierLogic = new SuppliersLogic();
+        public IEnumerable<Suppliers> Get()
         {
-            suppliersLogic = new SuppliersLogic();
+            return _supplierLogic.GetAll();
         }
 
-        [HttpGet]
-        public IHttpActionResult Get()
+        public Suppliers Get(int id)
+        {
+            return _supplierLogic.GetById(id);
+        }
+
+        public HttpResponseMessage Post([FromBody] Suppliers suppliers)
         {
             try
             {
-                var suppliers = suppliersLogic.GetAll();
-                var suppliersViewModel = new List<SuppliersViewModel>();
-                
-                foreach(var supplier in suppliers)
+                if(string.IsNullOrEmpty(suppliers.CompanyName) || string.IsNullOrEmpty(suppliers.ContactName))
                 {
-                    var supplierModel = new SuppliersViewModel
-                    {
-                        SupplierID = supplier.SupplierID,
-                        CompanyName = supplier.CompanyName,
-                        ContactName = supplier.ContactName,
-                    };
-                    suppliersViewModel.Add(supplierModel);
+                    throw new ArgumentException("CompanyName y ContactName son requeridos.");
                 }
-                return Ok(suppliersViewModel);
+                _supplierLogic.Add(suppliers);
+
+                return Request.CreateResponse(HttpStatusCode.Created, suppliers);
             }
-            catch(Exception ex)
+            catch(ArgumentException ex)
             {
-                return InternalServerError(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
-        [HttpPost]
-        public IHttpActionResult Post([FromBody] SuppliersViewModel suppliersViewModel)
+        [HttpPut]
+        public IHttpActionResult Put(int id, [FromBody] Suppliers suppliers)
         {
             try
             {
-                if(!ModelState.IsValid)
+                if(suppliers == null || suppliers.SupplierID != 0)
                 {
-                    return BadRequest(ModelState);
+                    throw new ArgumentException("SupplierID no coincide con el recibido.");
                 }
-                var supplier = new Suppliers
+
+                var existSupplier = _supplierLogic.GetById(id);
+                if (existSupplier == null)
                 {
-                    CompanyName = suppliersViewModel.CompanyName,
-                    ContactName= suppliersViewModel.ContactName,
-                };
+                    throw new ArgumentException($"Supplier con ID {id} no existente.");
+                }
 
-                suppliersLogic.Add(supplier);
-                supplier.SupplierID = suppliersViewModel.SupplierID;
+                existSupplier.CompanyName = suppliers.CompanyName;
+                existSupplier.ContactName = suppliers.ContactName;
+                _supplierLogic.Update(existSupplier);
 
-                return CreatedAtRoute("DefaultApi", new { id = supplier.SupplierID }, suppliersViewModel);
+                return Ok();
             }
             catch(Exception ex)
             {
-                return InternalServerError(ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            try
+            {
+                var logica = new SuppliersLogic();
+                logica.Delete(id);
+                return Ok();
+            }
+            catch(ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }
